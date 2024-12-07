@@ -44,6 +44,8 @@ Mutiple frameWorks of NodeJS
             
 ---------------------------
 
+    $ npm run start
+
     when we run project their is a dist folder which contain all the files
     that are available in src in "js" form
 
@@ -137,6 +139,43 @@ Mutiple frameWorks of NodeJS
 
         NOW we create our own service using command
 //5*****---------------------
+    34:20
         $ nest g service todo
 
         //todo.service, app.module, todo.controller
+
+//6*****---------------------
+
+    Providers (jitna bhi logics hoty hen wo yhn aty hen)
+    
+//7*****---------------------
+    35:36
+
+
+    Module (ap k pass 10-12 modules hon too ap unhen app.module.ts me btado ye mere multiple modules hen)
+
+        $ nest g module todo  (ye command apko 1 module generate kr k dy dyga )
+            {
+                Alert
+                ye 1 file create kryga module or 
+                app.module.tsx me us module ko import dyga 
+            }
+        
+    //ab humne Todo k bhi Module bana liya hai, too ab humne jo bhi chezen todo ki 
+    //app.module.tsx me import(TodoController,TodoService) kiya tha usy hata kr k 
+    //todo.module.ts me direct import kro 
+
+
+//8*****---------------------complex start
+
+    37:00
+       routing
+       post, (39:00 file -->          todo.controller.ts)
+
+    validation (42:10 --> todo.dto.ts )
+        
+
+
+       patch, put, delete, get
+
+       file rendering,        
