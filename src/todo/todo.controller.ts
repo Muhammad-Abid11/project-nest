@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from 'src/app.service';
 import { TodoService } from './todo.service';
 
@@ -50,6 +50,33 @@ import { TodoService } from './todo.service';
     getServiceTodo(){
         return this.todoService.serviceFoo()
     }
+
+//8*****---------------------post request
+
+      @Post('/postTodo')//http://localhost:3000/todo/postTodo
+      postTodo(){
+        return{
+            data:'data created successfully!'
+        }
+      }
+
+     //test the above request in "post" method
+
+     @Post('/postTodoData')//http://localhost:3000/todo/postTodoData
+     postTodoWithData(@Body() data){
+        
+        // Body (in postman/thunderClient send data)
+        // {
+        //    "name":"Ali",
+        //    "age":23,
+        //    "array":["abc","xyz"]
+        // }
+
+        
+        // return data // both works display ---> object
+        return `data created successfully! ${data.name}` //both works display sentence
+      }
+
 }
 
 
