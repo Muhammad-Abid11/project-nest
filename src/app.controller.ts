@@ -15,7 +15,7 @@ export class AppController {
     return this.appService.getHello();
   }
   
-  @Get('/login')
+  @Get('/login') //http://localhost:3000/login
   loginFunc() {
     // if we return nothing then the screen is white 
     // and body is empty
@@ -29,7 +29,7 @@ export class AppController {
     //if we same routes multiple time then its access top-most
   }
 
-  @Get('/register') //24:00
+  @Get('/register') //24:00 //http://localhost:3000/register
   loginFun(){
     return{
       name:"I am register path"

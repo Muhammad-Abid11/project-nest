@@ -14,6 +14,15 @@ import { TodoService } from './todo.service';
 
 
     export class TodoController {
+
+        //*****5 */
+        @Get()    //http://localhost:3000/todo/getTodos/
+        getTodos_1(){
+            // return this.todoService.rootPath //it gives body of function
+            return this.todoService.rootPath() 
+        }
+    
+
     @Get('/getTodos')    //http://localhost:3000/todo/getTodos/
     getTodos(){
         return{
@@ -22,7 +31,7 @@ import { TodoService } from './todo.service';
     }
 
     //4****
-    constructor(
+    constructor( //best paractice constructor always be upside
         private appservice:AppService,
         
         //5*****---------------------
