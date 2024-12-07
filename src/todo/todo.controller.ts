@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from 'src/app.service';
 import { TodoService } from './todo.service';
+import { CreateTodo } from './todo.dto';
 
 //3***----------------------------------------
 @Controller('todo')//decorator
@@ -63,7 +64,7 @@ import { TodoService } from './todo.service';
      //test the above request in "post" method
 
      @Post('/postTodoData')//http://localhost:3000/todo/postTodoData
-     postTodoWithData(@Body() data){
+     postTodoWithData(@Body() data:CreateTodo){ //CreateTodo is validator 9*****
         
         // Body (in postman/thunderClient send data)
         // {

@@ -172,8 +172,21 @@ Mutiple frameWorks of NodeJS
        routing
        post, (39:00 file -->          todo.controller.ts)
 
+//9*****---------------------complex start
+https://docs.nestjs.com/pipes#class-validator
+
     validation (42:10 --> todo.dto.ts )
         
+        jb ap 'main.ts' likhengy too terminal me warnings ayengy, wo library apne install krni hogi            
+          "app.useGlobalPipes(new ValidationPipe())" <---- main.ts
+        
+        library
+            npm i class-validator
+            npm i class-transformer
+            
+
+
+
 
 
        patch, put, delete, get
