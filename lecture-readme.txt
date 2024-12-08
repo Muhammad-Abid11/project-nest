@@ -183,12 +183,13 @@ https://docs.nestjs.com/pipes#class-validator
         library
             npm i class-validator
             npm i class-transformer
-            
 
-
-
-
-
-       patch, put, delete, get
+//10*****---------------------complex start CRUD operation
+45;00
+    post, 48:00
+    get,  50:00
+    put,  52:00
+    delete, 57:00
+    patch,
 
        file rendering,        

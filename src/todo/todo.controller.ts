@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { AppService } from 'src/app.service';
 import { TodoService } from './todo.service';
 import { CreateTodo } from './todo.dto';
@@ -78,6 +78,68 @@ import { CreateTodo } from './todo.dto';
         return `data created successfully! ${data.name}` //both works display sentence
       }
 
+  //10*****---------------------complex start CRUD operation
+
+  private todos=[]
+
+      @Post('/postTodoCRUD')//http://localhost:3000/todo/postTodoCRUD
+      postTodoCRUD(@Body() data:CreateTodo){
+        const item = {
+            _id: new Date().getTime(),
+            ...data,
+            createdAt: new Date().toLocaleString()
+        }
+        
+        this.todos.push(item)
+        
+        return {
+            message:'todo is created CRUD'
+        }
+      }    
+
+   @Get('/getTodoCRUD')//http://localhost:3000/todo/getTodoCRUD
+   getTodoCRUD(){
+    return {
+        todos:this.todos,
+        total:this.todos.length,
+        message:"Todo's fetched successfully!"
+    }
+  }
+
+
+  @Put('/updateTodoCRUD/:_id')//http://localhost:3000/todo/updateTodoCRUD/1
+  updateTodoCRUD(@Param('_id') _id: number, @Body() data) {
+    /* return {     ////http://localhost:3000/todo/updateTodoCRUD/1    return same id that you passed in param
+        _id,
+        }; 
+    */
+     
+
+    const updatedTodos= this.todos.map((value,index)=>{
+        if(value._id==_id){   //body k data ki _id match hojaye too update kr k return warna direct nichy return 
+            return{
+                ...value,
+                ['name']:data.name //body data
+            }
+        }
+        return value
+    })
+
+    this.todos=updatedTodos
+    return {
+        message:'todo is updated'
+    }
+}
+
+    @Delete('/deleteTodoCRUD/:_id')// http://localhost:3000/todo/deleteTodoCRUD/1733694762719
+    deleteTodoCRUD(@Param('_id') _id:number){
+        const updatedTodos=this.todos.filter((value)=>value._id != _id)//compare _id krna hai yaad rhy
+        this.todos=updatedTodos
+        return{
+            _id,
+            message:'todo is delete successfully!'
+        }
+    }
 }
 
 

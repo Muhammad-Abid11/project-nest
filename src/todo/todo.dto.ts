@@ -14,10 +14,19 @@ export class CreateTodo {
   email: string;
 
 /* ------expected-data in post-request 
-http://localhost:3000/todo/postTodoData
   {
     "name":"abid",
     "email":"abidkhan@gmail.com"
   }
 */
+
+  //10*****---------------------complex start CRUD operation
+  @IsNotEmpty({message:'desciption required'})
+  desc: string
+
+/*   {
+    "name":"abid",
+    "email":"abidkhan@gmail.com",
+    "desc":"account details provided"
+  } */
 }
