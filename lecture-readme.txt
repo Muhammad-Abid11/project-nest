@@ -193,3 +193,14 @@ https://docs.nestjs.com/pipes#class-validator
     patch,
 
        file rendering,        
+
+//11*****---------------------Middleware
+https://docs.nestjs.com/middleware
+59:40
+    middleware( 1 barrier jo apka action triger hone waly ap k tokken ko verify kry)
+    like we create tokens through JWT
+
+    $nest g --help ( yhn apko chart show jo apne package install krne hen,)(is k liye ap k pc me npm i -g @nestjs/cli install hone chahiye)
+    
+    $nest g mi "authentication_middleware" (now auth-middleware created)
+
