@@ -204,3 +204,16 @@ https://docs.nestjs.com/middleware
     
     $nest g mi "authentication_middleware" (now auth-middleware created)
 
+
+//12*****---------------------Pipes (data ane k baad modify krna ho ya uski id k sath koye string connect krna ho)
+1:07:00
+    $nest g pi todo
+
+    modification in  todo.controller.ts 
+
+
+//integrate mongoDD
+//basic middleware i.e custom middleware
+// id:nestUser pass:nestUserPassword
+// mongodb+srv://nestUser:nestUserPassword@cluster0.fvnly.mongodb.net/
+

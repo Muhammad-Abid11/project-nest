@@ -1,7 +1,8 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, UsePipes } from '@nestjs/common';
 import { AppService } from 'src/app.service';
 import { TodoService } from './todo.service';
 import { CreateTodo } from './todo.dto';
+import { TodoPipe } from './todo.pipe';
 
 //3***----------------------------------------
 @Controller('todo')//decorator
@@ -139,6 +140,14 @@ import { CreateTodo } from './todo.dto';
             _id,
             message:'todo is delete successfully!'
         }
+    }
+
+    // 12*****---------------------Pipes
+
+    @Get('pipe/:_id/:slug')// :slug is optional only id is enough, : is necessary
+    @UsePipes(TodoPipe)//http://localhost:3000/todo/pipe/2/abc
+    getPipeById(@Param() data) {// @Query bhi yhn add krsakty hen but I skiped
+        return data
     }
 }
 
