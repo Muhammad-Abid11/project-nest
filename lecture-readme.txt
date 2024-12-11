@@ -212,7 +212,50 @@ https://docs.nestjs.com/middleware
     modification in  todo.controller.ts 
 
 
-//integrate mongoDD
+//13*****---------------------File rendering
+1:13:00 
+
+
+Why NestJS
+    it creates
+        an HTTP server application using "NestFactory.create"
+        microservice application  using "NestFactory.createMicroservice"
+        standalone application using 'NestFactory.createApplicationContext'
+    
+    Modules ( root modules )
+        Modules are the building blocks of nest application
+
+                            RootModule  
+                      Module A                  Module B
+                Module AC Module AD     Module BC   Module BD
+
+    Decorator (@Module) (they are everywhere in NestJS)
+        Decorator can be a bit stange to start but when you understand they are powerful/special
+        kind of functions and it can be attached to methods,class,properties 
+        its like a suits that gives you extra power.
+    
+    Controller('root_path_define_here')it simply an incharge of receiving request and return a response 
+        export class AppController{
+            //methods-defined-here
+            @Get() //with HTTP verb/decorator
+            hello(){
+                return 'Hello World'
+            }
+        }
+    
+    Providers(Services) //freelance workers
+        Most of the code that we write is in providers
+        
+        @Injectable() //this decorator show that it is provider/service
+        export class TodoService {}
+
+        and the above provider you can use through constructor
+
+
+
+
+
+//integrate mongoDD //https://chatgpt.com/share/67593a62-f2e8-800e-8e35-845438bdc4ef
 //basic middleware i.e custom middleware
 // id:nestUser pass:nestUserPassword
 // mongodb+srv://nestUser:nestUserPassword@cluster0.fvnly.mongodb.net/
